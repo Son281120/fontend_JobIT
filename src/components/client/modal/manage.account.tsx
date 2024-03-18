@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 import type { TabsProps } from 'antd';
 import { IResume } from "@/types/backend";
 import { useState, useEffect } from 'react';
-import { callFetchInfoUser, callFetchResumeByUser, callGetSubscriberSkills, callUpdateInfoUser, callUpdatePassword, callUpdateSubscriber } from "@/config/api";
+import { callCreateSubscriber, callFetchInfoUser, callFetchResumeByUser, callGetSubscriberSkills, callUpdateInfoUser, callUpdatePassword, callUpdateSubscriber } from "@/config/api";
 import type { ColumnsType } from 'antd/es/table';
 import dayjs from 'dayjs';
 import { MonitorOutlined } from "@ant-design/icons";
@@ -255,7 +255,7 @@ const UserUpdateInfo = (props: any) => {
                     <Form.Item
                         label="Tuổi"
                         name="age"
-                        rules={[{ required: true, message: 'Vui lòng nhập Tuổi!' }]}
+                        rules={[{ required: true, message: 'Vui lòng nhập tuổi!' }]}
                     >
                         <Input type="number" placeholder="Nhập tuổi" />
                     </Form.Item>
@@ -294,18 +294,22 @@ const JobByEmail = (props: any) => {
         const init = async () => {
             const res = await callGetSubscriberSkills();
             if (res && res.data) {
-                form.setFieldValue("skills", res.data.skills);
+                form.setFieldsValue({
+                    skills: res.data?.skills,
+                    gmail: res.data?.gmail
+                });
             }
         }
         init();
     }, [])
 
     const onFinish = async (values: any) => {
-        const { skills } = values;
+        const { skills, gmail } = values;
         const res = await callUpdateSubscriber({
             email: user.email,
             name: user.name,
-            skills: skills ? skills : []
+            skills: skills ? skills : [],
+            gmail: gmail
         });
         if (res.data) {
             message.success("Cập nhật thông tin thành công");
@@ -315,7 +319,6 @@ const JobByEmail = (props: any) => {
                 description: res.message
             });
         }
-
     }
 
     return (
@@ -348,7 +351,21 @@ const JobByEmail = (props: any) => {
                         </Form.Item>
                     </Col>
                     <Col span={24}>
-                        <Button type="primary" onClick={() => form.submit()}>Cập nhật</Button>
+                        <Form.Item
+                            label={"Tài khoản gmail"}
+                            name={"gmail"}
+                            rules={[{ required: true, message: 'Vui lòng nhập gmail!', type: "email" }]}
+                        >
+                            <Input type="email" placeholder="Nhập gmail!" />
+                        </Form.Item>
+                    </Col>
+                    <Col span={24}>
+                        <Button
+                            type="primary"
+                            onClick={() => form.submit()}
+                        >
+                            Cập nhật
+                        </Button>
                     </Col>
                 </Row>
             </Form>

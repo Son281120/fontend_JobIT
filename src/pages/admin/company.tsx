@@ -194,7 +194,6 @@ const CompanyPage = () => {
         <>
             <Helmet>
                 <title>Quản lý công ty</title>
-                <link rel="shortcut icon" href="faviconCompany.ico" type="image/x-icon" />
             </Helmet>
             <div>
                 <Access

@@ -35,7 +35,6 @@ const RegisterPage = () => {
         <>
             <Helmet>
                 <title>Đăng ký</title>
-                <link rel="icon" href="/faviconLogin.ico" />
             </Helmet>
             <div className={styles["register-page"]} >
 

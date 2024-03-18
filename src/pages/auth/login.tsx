@@ -51,7 +51,6 @@ const LoginPage = () => {
         <>
             <Helmet>
                 <title>Đăng nhập</title>
-                <link rel="icon" href="/faviconLogin.ico" />
             </Helmet>
             <div className={styles["login-page"]}>
                 <main className={styles.main}>

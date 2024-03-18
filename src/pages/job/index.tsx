@@ -16,7 +16,6 @@ const ClientJobPage = (props: any) => {
         <>
             <Helmet>
                 <title>Việc làm mới nhất</title>
-                <link rel="shortcut icon" href="faviconJob.ico" type="image/x-icon" />
             </Helmet>
 
             <div className={styles["container"]} style={{ marginTop: 20 }}>

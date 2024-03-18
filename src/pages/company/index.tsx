@@ -9,7 +9,6 @@ const ClientCompanyPage = (props: any) => {
         <>
             <Helmet>
                 <title>Công ty tuyển dụng</title>
-                <link rel="shortcut icon" href="faviconCompany.ico" type="image/x-icon" />
             </Helmet>
             <div className={styles["container"]} style={{ marginTop: 20 }}>
                 <CarouselCard />

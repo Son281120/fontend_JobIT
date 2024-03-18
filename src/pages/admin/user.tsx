@@ -186,7 +186,6 @@ const UserPage = () => {
         <>
             <Helmet>
                 <title>Quản lý người dùng</title>
-                <link rel="shortcut icon" href="faviconUser.ico" type="image/x-icon" />
             </Helmet>
             <div>
                 <Access

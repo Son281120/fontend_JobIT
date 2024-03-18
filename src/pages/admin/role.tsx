@@ -180,7 +180,6 @@ const RolePage = () => {
         <div>
             <Helmet>
                 <title>Quản lý vai trò</title>
-                <link rel="shortcut icon" href="faviconRole.ico" type="image/x-icon" />
             </Helmet>
             <Access
                 permission={ALL_PERMISSIONS.ROLES.GET_PAGINATE}

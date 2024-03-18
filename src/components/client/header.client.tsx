@@ -96,8 +96,16 @@ const Header = (props: any) => {
                 <div className={styles["container"]}>
                     {!isMobile ?
                         <div style={{ display: "flex", gap: 30 }}>
-                            <div className={styles['brand']} >
-                                <FaReact onClick={() => navigate('/')} title='Job IT' />
+                            <div 
+                                className={styles['brand']}  
+                                onClick={() => navigate('/')} 
+                                title='Job IT' 
+                            >
+                                {/* <FaReact onClick={() => navigate('/')} title='Job IT' /> */}
+                                <h2>
+                                    <span>Job</span>
+                                    <span>IT</span>
+                                </h2>
                             </div>
                             <div className={styles['top-menu']}>
                                 <ConfigProvider
@@ -135,7 +143,10 @@ const Header = (props: any) => {
                         </div>
                         :
                         <div className={styles['header-mobile']}>
-                            <span>Your APP</span>
+                            <h2>
+                                <span>Job</span>
+                                <span>IT</span>
+                            </h2>
                             <MenuFoldOutlined onClick={() => setOpenMobileMenu(true)} />
                         </div>
                     }

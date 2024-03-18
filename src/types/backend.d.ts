@@ -162,6 +162,7 @@ export interface ISubscribers {
     name?: string;
     email?: string;
     skills: string[];
+    gmail: string;
     createdBy?: string;
     isDeleted?: boolean;
     deletedAt?: boolean | null;

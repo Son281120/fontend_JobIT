@@ -214,7 +214,6 @@ const JobPage = () => {
         <div>
             <Helmet>
                 <title>Quản lý công việc</title>
-                <link rel="shortcut icon" href="faviconJob.ico" type="image/x-icon" />
             </Helmet>
             <Access
                 permission={ALL_PERMISSIONS.JOBS.GET_PAGINATE}

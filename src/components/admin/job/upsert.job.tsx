@@ -159,7 +159,6 @@ const ViewUpsertJob = (props: any) => {
         <>
         <Helmet>
             <title>Job Edit</title>
-            <link rel="shortcut icon" href="faviconJob.ico" type="image/x-icon" />
         </Helmet>
             <div className={styles["upsert-job-container"]}>
                 <div className={styles["title"]}>

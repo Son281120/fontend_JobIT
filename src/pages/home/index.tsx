@@ -11,7 +11,6 @@ const HomePage = () => {
         <>
             <Helmet>
                 <title>Welcome JobIT</title>
-                <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
             </Helmet>
     
                 <div className={`${styles["container"]} ${styles["home-section"]}`}>

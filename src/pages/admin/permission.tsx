@@ -208,7 +208,6 @@ const PermissionPage = () => {
         <div>
             <Helmet>
                 <title>Quản lý phân quyền</title>
-                <link rel="shortcut icon" href="faviconPermission.ico" type="image/x-icon" />
             </Helmet>
             <Access
                 permission={ALL_PERMISSIONS.PERMISSIONS.GET_PAGINATE}
